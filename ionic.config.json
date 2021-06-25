@@ -1,0 +1,7 @@
+{
+  "name": "Visitor_Log",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

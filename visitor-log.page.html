@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Visitor Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-margin">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>S.No</ion-col>
+        <ion-col>Name</ion-col>
+        <!-- <ion-col>Email</ion-col> -->
+        <ion-col>Visit to</ion-col>
+        <ion-col>In</ion-col>
+        <ion-col>Out</ion-col>
+        <ion-col>Visit Type</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let log of logItems; index as i">
+        <ion-col>{{ i + 1 }}</ion-col>
+        <ion-col>{{ log.name }}</ion-col>
+        <!-- <ion-col>{{ log.email }}</ion-col> -->
+        <ion-col>{{ log.personToVisit }}</ion-col>
+        <ion-col>{{ log.timeOfEntry | date:'M/d/yy'}}</ion-col>
+        <ion-col>{{ log.timeOfExit | date:'M/d/yy'}}</ion-col>
+        <ion-col>{{ log.visitType }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item lines="none">
+      <ion-button color="primary" size="small" slot="end" routerLink="/material">
+        Material Design Table
+      </ion-button>
+    </ion-item>
+  </ion-content>
+
